@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container } from "../src/components/styles/Container.styled";
+import AmountComp from "./components/AmountComp";
+import { BetButton } from "./components/styles/BetButton.styled";
+import { Flex, FlexForMobile } from "./components/styles/Flex.styled";
+import { HeaderAuto, HeaderGame } from "./components/styles/Header.styled";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Container>
+        <div style={{ margin: "0 30%" }}>
+          <Flex>
+            <HeaderGame>
+              <p>Game</p>
+            </HeaderGame>
+            <HeaderAuto>
+              {" "}
+              <p>Auto</p>
+            </HeaderAuto>
+          </Flex>
+        </div>
+        <FlexForMobile>
+          <AmountComp text="10.00₾" autoText="Auto Bet"></AmountComp>
+          <AmountComp text="10.00X" autoText="Auto Cashout"></AmountComp>
+        </FlexForMobile>
+        <BetButton>BET</BetButton>
+      </Container>
     </div>
   );
 }
